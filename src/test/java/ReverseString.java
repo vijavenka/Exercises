@@ -3,15 +3,14 @@ public class ReverseString {
     public static void main(String[] args){
 
         String str = "raj kumar venkat prabhu";
-        for(int i=str.length()-1; i>=0; i--){
-            System.out.print(str.charAt(i));
-        String str = "raj kumar";
+
         String[] str1 = str.split(" ");
 
-        for(int j=str1.length; j>0; j--){
-        for(int i=str[j].length()-1; i>=0; i--){
-            System.out.print(str[j].charAt(i));
+        for(int j=str1.length-1; j>=0; j--){
+        for(int i=str1[j].length()-1; i>=0; i--){
+            System.out.print(str1[j].charAt(i));
         }
+            System.out.println();
         }
     }
 }
