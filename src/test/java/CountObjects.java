@@ -1,7 +1,7 @@
 class Students{
     String name;
     int age;
-    static int countObject=3;
+    static int countObject=0;
 
     public Students(String name, int age) {
         this.name = name;
