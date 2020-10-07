@@ -15,7 +15,7 @@ public class CountObjects {
         Students student1 = new Students("Vijay", 32);
         Students student4 = new Students("Shan", 19);
         Students student5 = new Students("Varun", 49);
-        Students student6 = new Students("Vanitha", 23);
+        Students student6 = new Students("Vanitha Nagaraj", 23);
 
         System.out.println("Total count of Objects " + Students.countObject);
     }
