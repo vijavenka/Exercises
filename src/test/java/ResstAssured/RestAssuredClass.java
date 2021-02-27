@@ -37,5 +37,6 @@ public class RestAssuredClass {
         String jsonObject = scannerForContract.useDelimiter("\\Z").next();
         String response = validatableResponse.extract().response().asString();
         assertThat(response, matchesJsonSchema(jsonObject));
+        
     }
 }
