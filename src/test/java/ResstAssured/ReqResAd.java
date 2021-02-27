@@ -16,5 +16,4 @@ public class ReqResAd extends AbstractDomain {
     private String company;
     private String url;
     private String text;
-    
 }
