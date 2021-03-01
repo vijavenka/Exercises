@@ -57,12 +57,15 @@ class HashMapListOfObjects {
         	matches.put(tcnt, obj);
         }
         
-		/*
-		 * for (Map.Entry<Integer, List<Object>> entry : matches.entrySet() ) {
-		 * 
-		 * for(Object en : entry.getValue()){ System.out.print(en +" "); }
-		 * System.out.println(); }
-		 */
+		
+		 for (Map.Entry<Integer, List<Object>> entry : matches.entrySet() ) 
+		 {
+		 
+		 for(Object en : entry.getValue()){ System.out.print(en +" "); }
+		 System.out.println(); 
+		 System.out.println();
+		 }
+		 
     }
 }
 
