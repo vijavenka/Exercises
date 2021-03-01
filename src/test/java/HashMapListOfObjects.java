@@ -1,71 +1,60 @@
-import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 class HashMapListOfObjects {
-	static int tcnt=1;
+ 
+	static List<String> str1 = new LinkedList<>();
+	List<String> str1Copy;
 	
-    public static void main(String[] args) {
-        
-        List<String> str1 = new LinkedList<>();
-        str1.add("john gopal");
-        str1.add("john gopal");
-        str1.add("john gopals");
-        str1.add("john gopal");
-        str1.add("johns gopals");
-        str1.add("john gopals");
-        str1.add("vijay");
-
-        List<String> str2 = new LinkedList<>(str1);
-        List<String> str3 = new LinkedList<>();
-        Map<Integer, List<Object>> matches = new HashMap<>();
-        List<Object> obj = new LinkedList<>();
-        
-        int match=0, cnt=1, size=str1.size();
-        
-        for(int i=1; i<size; i++){
-            if(str1.get(0).equalsIgnoreCase(str1.get(i))){
-                cnt++;
-            }
-        }
-        
-        do{
-        	    
-        	obj.add(str1.get(0));
-            obj.add(cnt);
-            matches.put(tcnt, obj);
-
-            cnt=1;
-            str3.add(str1.get(match));
-            str1.removeAll(str3);
-            str3.clear();
-            size=str1.size();
-            tcnt++;
-            
-            for(int i=1; i<size; i++){
-                if(str1.get(0).equalsIgnoreCase(str1.get(i))){
-                    cnt++;
-                }
-            }
-        }while (cnt>1);
-
-        for(int i=0; i<size; i++, tcnt++) {
-        	obj.add(str1.get(i));
-        	obj.add(1);
-        	matches.put(tcnt, obj);
-        }
-        
+	public static void main(String[] args) {
+		str1.add("siddharth");
+		str1.add("siddharth saurav");
+		str1.add("Jasti");
+		str1.add("Jasti");
+		str1.add("aravind");
+		str1.add("siddharth saurav");
+		str1.add("Jasti");
 		
-		 for (Map.Entry<Integer, List<Object>> entry : matches.entrySet() ) 
-		 {
-		 
-		 for(Object en : entry.getValue()){ System.out.print(en +" "); }
-		 System.out.println(); 
-		 System.out.println();
-		 }
-		 
-    }
-}
+		FindDuplicateCounts(str1);
+	}
 
+	private static void FindDuplicateCounts(List<String> str1) {
+
+		Map<Integer, List<Object>> duplicateStringCount = new HashMap<>();
+		List<Object> tempStr1 = new LinkedList<>();
+		
+		int size = str1.size();
+		int strCounter=1, cnt=0, i=0, j=0;
+		
+		Collections.sort(str1);
+		
+		for(; i<size-1; ) 
+		{
+		for(j=i+1; j<size; j++) 
+			{
+				if(str1.get(i).equalsIgnoreCase(str1.get(j))) {
+					strCounter++;
+				}
+			}  
+		tempStr1.add(str1.get(i));
+		str1.removeAll(tempStr1);
+		tempStr1.add(strCounter);
+		duplicateStringCount.put(cnt, tempStr1);
+		strCounter=1;
+		cnt++;
+		
+		tempStr1 = new LinkedList<>();
+		size = str1.size();
+		i=0;
+		j=i+1;
+		}
+		
+		for(Entry<Integer, List<Object>> entry: duplicateStringCount.entrySet()) {
+				System.out.print(entry.getValue());
+		}
+	}
+}
