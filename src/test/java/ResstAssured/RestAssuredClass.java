@@ -26,11 +26,10 @@ public class RestAssuredClass {
         ReqRes reqRes;
         reqRes = validatableResponse.extract().response().as(ReqRes.class);
 
-        for (ReqResData data : reqRes.getData())
-         {
-            System.out.println(data.getEmail());
-        }
-
+		/*
+		 * for (ReqResData data : reqRes.getData()) {
+		 * System.out.println(data.getEmail()); }
+		 */
         String contractFileToCompare = System.getProperty("user.dir") + "/src/test/java/ResstAssured/ReqResSchema.json";
         Scanner scannerForContract;
         scannerForContract = new Scanner(new File(contractFileToCompare));

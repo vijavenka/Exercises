@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import java.lang.reflect.Method;
 
 // This is testng framework, hence it has DProvider.xml which is configured in pom.xml file as Profile
-// Execute:- mvn clean test -PDProvider
+// Execute:- right click DProvider.xml - run As - run configuration - Goals - clean test -P DProvider
 
 public class DProvider {
 
